@@ -40,7 +40,7 @@ export default defineConfig(({ mode }) => {
             outDir: mode === 'backend' ? '../Pwesto Backend/public/assets' : 'dist',
             emptyOutDir: mode !== 'backend',
             rollupOptions: {
-                input: entryFile,
+                input: mode === 'backend' ? entryFile : undefined,
                 output: {
                     entryFileNames: 'pwesto-react.js',
                     chunkFileNames: '[name].js',
