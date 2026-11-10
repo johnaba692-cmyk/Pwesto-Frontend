@@ -37,8 +37,8 @@ export default defineConfig(({ mode }) => {
             }
         },
         build: {
-            outDir: '../Pwesto Backend/public/assets',
-            emptyOutDir: false,
+            outDir: mode === 'backend' ? '../Pwesto Backend/public/assets' : 'dist',
+            emptyOutDir: mode !== 'backend',
             rollupOptions: {
                 input: entryFile,
                 output: {
