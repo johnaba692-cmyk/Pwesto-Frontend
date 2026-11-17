@@ -29,10 +29,12 @@ export default defineConfig(({ mode }) => {
             proxy: {
                 '^/$': {
                     target: backendUrl,
+                    changeOrigin: true,
                     rewrite: () => '/pwesto'
                 },
                 '/api': backendUrl,
                 '/assets': backendUrl,
+                '/uploads': backendUrl,
                 '/favicon.ico': backendUrl
             }
         },
